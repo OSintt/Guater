@@ -4,7 +4,6 @@ import passport from "@fastify/passport";
 import cookie from "@fastify/cookie";
 import { config } from "dotenv";
 import './strategies/discord_strategy';
-import authRoutes from "./routes/auth.routes";
 
 config();
 
@@ -22,8 +21,8 @@ fastify.register(passport.initialize());
 fastify.register(passport.secureSession());
 
 //register routes
-//authRoutes.forEach(r => fastify.route(r))
 fastify.register(require('./routes/auth.routes'), { prefix: '/api/auth' });
+fastify.register(require('./routes/rangos.routes'), { prefix: '/api/rangos' });
 
 
 //start server

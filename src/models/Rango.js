@@ -15,6 +15,10 @@ const RangoSchema = new Schema(
     },
     rango_value: String,
     sale_percent: Number,
+    position: {
+      unique: true,
+      type: Number
+    }
   },
   {
     versionKey: false,

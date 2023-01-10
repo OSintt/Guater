@@ -1,8 +1,8 @@
-import { me, login } from "../controllers/auth.controllers";
+import { me, login, changeMcNick } from "../controllers/auth.controllers";
 import { isAuth } from "../middlewares/auth.middlewares";
 import passport from "@fastify/passport";
 
-module.exports = function (fastify, opts, done) {
+const authRoutes = (fastify, opts, done) => {
   fastify.get(
     "/login",
     { preValidation: passport.authenticate("discord") },
@@ -28,6 +28,14 @@ module.exports = function (fastify, opts, done) {
     login
   );
 
+  fastify.put(
+    "/change-mc",
+    {
+      preValidation: isAuth,
+    },
+    changeMcNick
+  );
+
   fastify.get("/logout", async (req, rep) => {
     if (req.user) {
       req.logout();
@@ -39,3 +47,5 @@ module.exports = function (fastify, opts, done) {
 
   done();
 };
+
+export default authRoutes;

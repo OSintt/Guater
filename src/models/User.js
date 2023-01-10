@@ -32,6 +32,10 @@ const UserSchema = new Schema({
         type: Boolean,
         default: false
     },
+    funds: {
+        type: Number,
+        default: 0
+    },
     date: Date
 }, {
     versionKey: false
