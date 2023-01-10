@@ -5,7 +5,7 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
-    tag: {
+    discriminator: {
         type: String,
         required: true
     },

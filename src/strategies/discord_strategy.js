@@ -7,13 +7,17 @@ import { config } from "dotenv";
 
 config();
 
-passport.registerUserSerializer(async (user, request) => {
-  return user.id;
+passport.registerUserSerializer(async (user) => {
+  return user.userId;
 });
 
-passport.registerUserDeserializer(async (userId, request) => {
-  const user = await User.findOne({ userId: userId });
-  return user ? user : null;
+passport.registerUserDeserializer(async (userId) => {
+  try {
+    const user = await User.findOne({ userId });
+    return user ? user : null;
+  } catch (e) {
+    return e;
+  }
 });
 
 const clientID = process.env.CLIENT_ID;
