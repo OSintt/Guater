@@ -6,7 +6,7 @@ const getRoles = async (req, rep) => {
 };
 
 const purchaseRole = async (req, rep) => {
-  const { rango } = req.body;
+  const { rango } = req.params;
   const foundRango = await Rango.findById(rango);
   if (!foundRango)
     return rep
@@ -21,14 +21,14 @@ const purchaseRole = async (req, rep) => {
         message:
           "Estás intentando comprar un rango inferior al que tienes actualmente",
       });
-  if (user.funds < rango.price)
+  if (user.funds < foundRango.price)
     return rep
       .code(403)
       .send({
         status: 403,
         message: "No tienes los fondos suficientes para comprar este rango",
       });
-  user.rango = foundRango;
+  user.rango = foundRango._id;
   await user.save();
   return rep.code(201).send({ status: 201, user });
 };

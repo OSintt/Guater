@@ -6,7 +6,7 @@ const rangosRoutes = (fastify, opts, done) => {
   fastify.put(
     "/purchase-rango/:rango",
     {
-      preValidate: isAuth,
+      preValidation: isAuth,
     },
     purchaseRole
   );

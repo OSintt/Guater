@@ -23,11 +23,12 @@ fastify.register(passport.secureSession());
 //register routes
 fastify.register(require('./routes/auth.routes'), { prefix: '/api/auth' });
 fastify.register(require('./routes/rangos.routes'), { prefix: '/api/rangos' });
-
+fastify.register(require('./routes/kits.routes'), { prefix: '/api/kits' });
+fastify.register(require('./routes/funds.routes'), { prefix: '/api/purchases' });
 
 //start server
 const start = async () => {
-  await fastify.listen({ port: 3001 });
+  await fastify.listen({ port: process.env.PORT || 3001 });
   fastify.log.info(
     `Servidor corriendo en el puerto ${fastify.server.address().port}`
   );
