@@ -1,4 +1,3 @@
-import fastifyMongodb from "@fastify/mongodb";
 import {
   createOrder,
   captureOrder,

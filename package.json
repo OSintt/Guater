@@ -8,8 +8,6 @@
     "axios": "^1.2.2",
     "dotenv": "^16.0.3",
     "fastify": "^4.11.0",
-    "fastify-passport": "^0.6.0",
-    "fastify-swagger": "^5.2.0",
     "mongoose": "^6.8.3",
     "passport": "^0.6.0",
     "passport-discord": "^0.1.4"
