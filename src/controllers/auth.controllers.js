@@ -8,6 +8,11 @@ const me = (req, rep) => {
   rep.send({ status: 200, user: req.user });
 };
 
+const getMyPurchases = async (req, rep) => {
+    const { purchases } = await req.user.populate('purchases');
+    rep.send({status: 200, purchases});
+}
+
 const ban = async (req, rep) => {
     const user = await User.findById(req.params.user);
     if (!user) return rep.code(404).send({ status: 404, message: 'No se ha encontrado a ese usuario' });
@@ -45,4 +50,4 @@ const changeMcNick = async (req, rep) => {
   return rep.code(201).send({ status: 201, user, new_nick });
 };
 
-export { me, login, changeMcNick, ban };
+export { me, login, changeMcNick, ban, getMyPurchases };

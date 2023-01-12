@@ -1,4 +1,9 @@
-import { me, login, changeMcNick } from "../controllers/auth.controllers";
+import {
+  me,
+  login,
+  changeMcNick,
+  getMyPurchases,
+} from "../controllers/auth.controllers";
 import { isAuth } from "../middlewares/auth.middlewares";
 import passport from "@fastify/passport";
 
@@ -17,6 +22,14 @@ const authRoutes = (fastify, opts, done) => {
     me
   );
 
+  fastify.get(
+    "/my-purchases",
+    {
+      preValidation: isAuth,
+    },
+    getMyPurchases
+  );
+  
   fastify.get(
     "/redirect",
     {
