@@ -1,9 +1,8 @@
-import { Schema, Typesmodel } from 'mongooose';
+import { Schema, Types, model } from 'mongoose';
 
 const PurchaseSchema = new Schema({
     date: Date,
     charge: Number,
-    name: Text,
 });
 
 export default model('Purchase', PurchaseSchema);

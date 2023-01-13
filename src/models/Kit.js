@@ -1,6 +1,6 @@
 import { Schema, model } from 'mongoose';
 
-const KitSchema = new Schema{
+const KitSchema = new Schema({
     title: {
         required: true,
         unique: true,
@@ -18,8 +18,8 @@ const KitSchema = new Schema{
         default: false
     },
     sale_percent: Number,
-} {
+}, {
     versionKey: false
-};
+});
 
 export default model('Kit', KitSchema);

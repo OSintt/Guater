@@ -1,4 +1,4 @@
-import { Schema, Typesmodel } from "mongoose";
+import { Schema, Types, model } from "mongoose";
 
 const RangoSchema = new Schema(
   {
