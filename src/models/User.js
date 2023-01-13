@@ -35,6 +35,4 @@ const UserSchema = new Schema({
     date: Date
 }, {
     versionKey: false
-});
-
-export default model('User', UserSchema);
+};
