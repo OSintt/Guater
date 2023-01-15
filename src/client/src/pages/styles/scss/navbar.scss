@@ -1,0 +1,44 @@
+@import '__vars';
+
+.nav-container {
+    padding: 1em 10em;
+    background-color: #7c98b7;
+    text-align: center;
+    .nav-items-container {
+        padding: .5em;
+        align-content: center;
+        justify-content: center;
+    }
+    .nav-items {
+        margin-left: 1em;
+        a {
+            font-size: 20px;
+        }
+    }
+
+    .nav-profile {
+        align-content: center;
+        img {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            border: 1px solid $white;
+            margin-left: .5em;
+        }
+    }
+
+    .nav-brand {
+        font-size: 36px;
+    }
+
+    a {
+        color: $white;
+        font-family: 'Minecraft', sans-serif;
+        text-transform: uppercase;
+        color: $white;
+        text-decoration: none;
+    }
+
+    align-items: center;
+    justify-content: space-between;
+}

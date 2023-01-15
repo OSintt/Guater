@@ -1,7 +1,8 @@
+import { config } from "dotenv";
 import User from "../models/User";
-
+config();
 const login = (req, rep) => {
-  rep.redirect("/dashboard");
+  rep.redirect(process.env.CLIENT_DOMAIN);
 };
 
 const me = (req, rep) => {

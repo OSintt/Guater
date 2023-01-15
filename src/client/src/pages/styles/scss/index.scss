@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+@import url('https://fonts.cdnfonts.com/css/minecraft-4');
+@import '__vars';
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background: $white;
+    color: $black;
+}
+
+.flex {
+  display: flex;
+}
+
+.app-wrapper {
+  padding: 2em 10em;
+}
+
+.container {
+  padding: 2em;
+}

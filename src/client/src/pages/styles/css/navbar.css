@@ -1,0 +1,40 @@
+.nav-container {
+  padding: 1em 10em;
+  background-color: #7c98b7;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-container .nav-items-container {
+  padding: 0.5em;
+  align-content: center;
+  justify-content: center;
+}
+.nav-container .nav-items {
+  margin-left: 1em;
+}
+.nav-container .nav-items a {
+  font-size: 20px;
+}
+.nav-container .nav-profile {
+  align-content: center;
+}
+.nav-container .nav-profile img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 1px solid #eee;
+  margin-left: 0.5em;
+}
+.nav-container .nav-brand {
+  font-size: 36px;
+}
+.nav-container a {
+  color: #eee;
+  font-family: "Minecraft", sans-serif;
+  text-transform: uppercase;
+  color: #eee;
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=navbar.css.map */

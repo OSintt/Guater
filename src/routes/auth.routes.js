@@ -34,8 +34,7 @@ const authRoutes = (fastify, opts, done) => {
     "/redirect",
     {
       preValidation: passport.authenticate("discord", {
-        failureRedirect: "/forbidden",
-        successRedirect: "/dashboard",
+        failureRedirect: "/forbidden"
       }),
     },
     login

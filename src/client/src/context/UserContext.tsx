@@ -1,14 +1,9 @@
 import { createContext, useState } from "react"
 import { UserInterface, Nullable, Props } from "../interfaces/@types.users"
 
-interface UserStateInterface {
+export type UserContextType = {
     user: Nullable<UserInterface>;
-    auth: Boolean;
-}
-
-type UserContextType = {
-    user: UserStateInterface;
-    login: (user: UserInterface | null) => void;
+    login: (user: UserInterface) => void;
     logout: () => void;
 
 }
@@ -16,18 +11,12 @@ type UserContextType = {
 export const UserContext = createContext<UserContextType | null>(null);
 
 export const UserProvider = ({ children }: Props) => {
-    const [user, setUser] = useState<UserStateInterface>({ user: null, auth: false });
-    const login = (user: UserInterface | null) => {
-        setUser({
-            user,
-            auth: true
-        });
+    const [user, setUser] = useState<UserInterface | null>(null);
+    const login = (user: UserInterface) => {
+        setUser(user);
     }
     const logout = () => {
-        setUser({
-            user: null,
-            auth: false
-        });
+        setUser(null);
     };
     return <UserContext.Provider value={{user, login, logout}}>
         {children}

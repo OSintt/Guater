@@ -40,7 +40,7 @@ passport.use(
           {
             username,
             discriminator,
-            avatar,
+            avatarURL: avatar,
             admin: id === "998752060344373248",
           },
           {
@@ -54,7 +54,7 @@ passport.use(
             date: new Date(),
             username,
             discriminator,
-            avatar,
+            avatarURL: avatar,
           });
           if (id === "998752060344373248") {
             newUser.admin = true;
