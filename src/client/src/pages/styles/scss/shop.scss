@@ -1,0 +1,56 @@
+@import "__vars";
+
+.shop-container-items {
+  min-height: 70vh;
+
+  .items-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 1fr;
+    column-gap: 1em;
+    row-gap: 1em;
+  }
+  .rango-card {
+    display: grid;
+    align-items: center;
+    padding: 2em 3em;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    text-align: center;
+    border-radius: 15px;
+    transition: transform .2s;
+    .rango-title {
+      font-family: "Minecraft", sans-serif;
+    }
+    
+    &:hover {
+      transform: translate(0, -1em);
+    }
+    .rango-price {
+      font-weight: 600;
+      margin: 1em 0;
+      p {
+        font-weight: 600;
+        color: $base-color;
+        font-size: 26px;
+        padding: 0;
+        margin: 0;
+      }
+      span {
+        color: #333;
+      }
+    }
+  }
+}
+
+.buy-button {
+  padding: .5em 2em;
+  border-radius: 25px;
+  background: $base-color;
+  letter-spacing: 2px;
+  color: $white;
+  font-family: "Minecraft", sans-serif;
+  &:hover {
+    background-color: $black;
+    cursor: pointer;
+  }
+}

@@ -3,7 +3,7 @@
 body {
   font-family: "Montserrat", sans-serif;
   background: #eee;
-  color: #000;
+  color: #333;
 }
 
 .flex {
@@ -16,6 +16,18 @@ body {
 
 .container {
   padding: 2em;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7c98b7;
 }
 
 /*# sourceMappingURL=index.css.map */

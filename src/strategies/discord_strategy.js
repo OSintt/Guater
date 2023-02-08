@@ -54,6 +54,7 @@ passport.use(
             date: new Date(),
             username,
             discriminator,
+            mc_nick: username,
             avatarURL: avatar,
           });
           if (id === "998752060344373248") {

@@ -12,8 +12,8 @@ const purchaseRole = async (req, rep) => {
     return rep
       .code(404)
       .send({ status: 404, message: "El rango seleccionado no existe" });
-  const user = req.user.populate("rango");
-  if (user.rango.position >= rango)
+  const user = await req.user.populate("rango");
+  if (user.rango && user.rango.position >= rango.position)
     return rep
       .code(404)
       .send({

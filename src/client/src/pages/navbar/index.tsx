@@ -1,11 +1,10 @@
 import NavBrand from "./NavBrand";
 import NavItems from "./NavItems";
 import '../styles/css/navbar.css';
-import { useContext } from "react";
-import { UserContext, UserContextType } from "../../context/UserContext";
+import { UserInterface } from "../../interfaces/@types.users";
 
-export const Navbar = () => {
-    const { user } = useContext(UserContext) as UserContextType;
+export const Navbar = ({ user }: { user: UserInterface | null }) => {
+    
     return (
         <div className="nav-container flex">
             <NavBrand />

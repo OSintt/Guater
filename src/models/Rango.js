@@ -8,12 +8,10 @@ const RangoSchema = new Schema(
       unique: true,
     },
     price: Number,
-    description: String,
     sale: {
       type: Boolean,
       default: false,
     },
-    rango_value: String,
     sale_percent: Number,
     position: {
       unique: true,

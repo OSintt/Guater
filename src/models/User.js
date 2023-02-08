@@ -14,6 +14,10 @@ const UserSchema = new Schema({
         required: true,
         unique: true
     },
+    mc_nick: {
+        type: String,
+        required: true
+    },
     avatarURL: String,
     purchases: [{
         type: Types.ObjectId,
@@ -23,8 +27,7 @@ const UserSchema = new Schema({
         type: Types.ObjectId,
         ref: 'Rangos'
     },
-    minecraft_username: String,
-    kit: [{
+    kits: [{
         type: Types.ObjectId,
         ref: 'Kit'
     }],

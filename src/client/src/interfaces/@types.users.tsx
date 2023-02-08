@@ -10,9 +10,8 @@ export interface RangoInterface {
   _id: String;
   title: String;
   price: Number;
-  description: Number;
+  description?: String;
   sale: Boolean;
-  rango_value: String;
   sale_percent: Number;
   position: Number;
 }
@@ -22,7 +21,6 @@ export interface KitInterface {
   title: String;
   description: String;
   price: Number;
-  rango_value: String;
   sale: Boolean;
   sale_percent: Number;
 }
@@ -45,4 +43,5 @@ export interface UserInterface {
   admin: Boolean;
   funds: Number;
   date: Date;
+  mc_nick: String;
 }

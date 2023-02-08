@@ -1,0 +1,6 @@
+.profile-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+/*# sourceMappingURL=profile.css.map */

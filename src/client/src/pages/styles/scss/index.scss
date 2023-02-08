@@ -19,3 +19,15 @@ body {
 .container {
   padding: 2em;
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $base-color;
+}

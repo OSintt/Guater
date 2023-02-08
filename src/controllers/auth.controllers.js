@@ -5,8 +5,9 @@ const login = (req, rep) => {
   rep.redirect(process.env.CLIENT_DOMAIN);
 };
 
-const me = (req, rep) => {
-  rep.send({ status: 200, user: req.user });
+const me = async (req, rep) => {
+  const user = await req.user.populate('kits rango');
+  rep.send({ status: 200, user });
 };
 
 const getMyPurchases = async (req, rep) => {
@@ -23,7 +24,7 @@ const ban = async (req, rep) => {
 }
 
 const changeMcNick = async (req, rep) => {
-  const { new_nick } = req.body;
+  let { new_nick } = req.body;
   if (!new_nick)
     return rep
       .code(401)

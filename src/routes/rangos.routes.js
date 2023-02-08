@@ -4,7 +4,7 @@ import { isAuth } from "../middlewares/auth.middlewares";
 const rangosRoutes = (fastify, opts, done) => {
   fastify.get("/", getRoles);
   fastify.put(
-    "/purchase-rango/:rango",
+    "/purchase/:rango",
     {
       preValidation: isAuth,
     },

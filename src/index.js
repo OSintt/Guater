@@ -5,7 +5,7 @@ import cookie from "@fastify/cookie";
 import { config } from "dotenv";
 import cors from "@fastify/cors";
 import "./strategies/discord_strategy";
-
+import { createRangos, createKits } from "./lib/createData";
 config();
 
 const fastify = require("fastify")({ logger: true });
@@ -37,6 +37,8 @@ const start = async () => {
   fastify.log.info(
     `Servidor corriendo en el puerto ${fastify.server.address().port}`
   );
+  //createKits();
+  //createRangos();
 };
 
 start();

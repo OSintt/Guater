@@ -4,7 +4,7 @@ import { isAuth } from "../middlewares/auth.middlewares";
 const kitsRoutes = (fastify, opts, done) => {
   fastify.get("/", getKits);
   fastify.put(
-    "/purchase-kit",
+    "/purchase/:kit",
     {
       preValidation: isAuth,
     },

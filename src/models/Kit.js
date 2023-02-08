@@ -12,7 +12,6 @@ const KitSchema = new Schema({
         type: String
     },
     price: Number,
-    rango_value: String,
     sale: {
         type: Boolean,
         default: false

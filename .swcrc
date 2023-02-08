@@ -1,0 +1,16 @@
+{
+    "exclude": "client/",
+    "jsc": {
+        "parser": {
+            "syntax": "ecmascript",
+            "jsx": false,
+            "dynamicImport": true,
+            "decorators": true
+        },
+        "target": "es2020"
+    },
+    "module": {
+        "type": "commonjs"
+    }
+}
+   
